@@ -1,6 +1,6 @@
 workflow "Install, Test, Compile" {
   on = "push"
-  resolves = ["Compile"]
+  resolves = ["Compile", "Test"]
 }
 
 action "Install" {
