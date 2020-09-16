@@ -21,7 +21,7 @@ describe('Basic Functionality', () => {
             return input;
         });
 
-        const fakeLoggingFunction: LoggingFunction = jest.fn((message: any) => console.dir(message));
+        const fakeLoggingFunction: LoggingFunction = jest.fn((message: any) => ({}));
         const fakeLogGenerationFunction: LogGenerationFunction = jest.fn((input: any) => (input));
 
         const runner = new TaskRunner({
