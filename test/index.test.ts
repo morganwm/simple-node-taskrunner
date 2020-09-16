@@ -1,7 +1,10 @@
+let counter = 0;
 jest.mock('moment', () => jest.fn(() => {
     return {
         format: jest.fn(() => {
-            return 'moment'
+            const res = `moment${counter}`;
+            counter+=1;
+            return res
         })
     }
 }));
@@ -52,8 +55,8 @@ describe('Basic Functionality', () => {
                         { input: { input: 'input1' }}
                     ],
                     info: {
-                        executionStart: 'moment',
-                        executionEnd: 'moment',
+                        executionStart: 'moment0',
+                        executionEnd: 'moment1',
                     },
                 },
                 'function 2': {
@@ -61,8 +64,8 @@ describe('Basic Functionality', () => {
                     data: { input: 'input2' },
                     error: undefined,
                     info: {
-                        executionStart: 'moment',
-                        executionEnd: 'moment',
+                        executionStart: 'moment2',
+                        executionEnd: 'moment3',
                     },
                     log: [
                         { input: { input: 'input2' }},
